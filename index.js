@@ -1,9 +1,21 @@
 var currentPage = null;
+var currentCatagory = null;
+
+function displayCatagory(catagoryName){
+  if(currentCatagory != catagoryName){
+    if(currentCatagory != null){
+      clearCurrentPage("catagories", "currentCatagory");
+    }
+    printCatagory(catagoryName);
+  }
+
+  currentCatagory = catagoryName;
+}
 
 function displayCharacter(characterName){
   if(currentPage != characterName){
     if(currentPage != null){
-      clearCurrentPage();
+      clearCurrentPage("info", "currentPage");
     }
     printInfo(characterName);
   }
@@ -28,8 +40,22 @@ function printInfo(characterName){
   document.getElementById('info').appendChild(currentPage);
 }
 
-function clearCurrentPage(){
-  document.getElementById("info").removeChild(document.getElementById("currentPage"));
+function printCatagory(catagoryName){
+  var currentPage = document.createElement("div");
+  currentPage.id = "currentCatagory";
+
+  var infoTitle = document.createElement("h1");
+  infoTitle.className = "characterTitle";
+  infoTitle.innerHTML = catagoryName;
+  currentPage.appendChild(infoTitle);
+
+  getCatagories(catagoryName);
+
+  document.getElementById('info').appendChild(currentPage);
+}
+
+function clearCurrentPage(parentId, childId){
+  document.getElementById(parentId).removeChild(document.getElementById(childId));
 }
 
 function getInfo(characterName){
