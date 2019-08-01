@@ -3,12 +3,9 @@ var currentCatagory = null;
 
 function displayCatagory(catagoryName){
   if(currentCatagory != catagoryName){
-    if(currentCatagory != null){
-      clearCurrentPage("catagories", "currentCatagory");
-    }
+    clearCurrentPage("catagories", "currentCatagory");
     printCatagory(catagoryName);
   }
-
   currentCatagory = catagoryName;
 }
 
@@ -32,12 +29,15 @@ function printInfo(characterName){
   infoTitle.innerHTML = characterName;
   currentPage.appendChild(infoTitle);
 
+  var br = document.createElement("br");
+  currentPage.appendChild(br);
+
   var info = document.createElement("h3");
   info.className = "characterInfo";
   info.innerHTML = getInfo(characterName);
   currentPage.appendChild(info);
 
-  document.getElementById('info').appendChild(currentPage);
+  document.getElementById("info").appendChild(currentPage);
 }
 
 function printCatagory(catagoryName){
@@ -48,10 +48,16 @@ function printCatagory(catagoryName){
   infoTitle.className = "characterTitle";
   infoTitle.innerHTML = catagoryName;
   currentPage.appendChild(infoTitle);
+//<input type="button" name="" value="Crystal Fang" onclick="displayCharacter('CrystalFang')"><br>
+  var topic1 = document.createElement("input");
+  topic1.type = "button";
+  topic1.value = "CrystalFang"
+  topic1.addEventListener('click', function(){
+      displayCharacter('CrystalFang');
+    });
+  currentPage.appendChild(topic1);
 
-  getCatagories(catagoryName);
-
-  document.getElementById('info').appendChild(currentPage);
+  document.getElementById("catagories").appendChild(currentPage);
 }
 
 function clearCurrentPage(parentId, childId){
