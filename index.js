@@ -57,6 +57,22 @@ function printCatagory(catagoryName){
     });
   currentPage.appendChild(topic1);
 
+  var topic2 = document.createElement("input");
+  topic2.type = "button";
+  topic2.value = "BurningBrotherhood"
+  topic2.addEventListener('click', function(){
+      displayCharacter('BurningBrotherhood');
+    });
+  currentPage.appendChild(topic2);
+
+  var topic3 = document.createElement("input");
+  topic3.type = "button";
+  topic3.value = "MoonlitShadows"
+  topic3.addEventListener('click', function(){
+      displayCharacter('MoonlitShadows');
+    });
+  currentPage.appendChild(topic3);
+
   document.getElementById("catagories").appendChild(currentPage);
 }
 
