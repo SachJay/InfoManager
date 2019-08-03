@@ -48,7 +48,7 @@ function printCatagory(catagoryName){
   infoTitle.className = "characterTitle";
   infoTitle.innerHTML = catagoryName;
   currentPage.appendChild(infoTitle);
-//<input type="button" name="" value="Crystal Fang" onclick="displayCharacter('CrystalFang')"><br>
+
   var topic1 = document.createElement("input");
   topic1.type = "button";
   topic1.value = "CrystalFang"

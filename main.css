@@ -83,3 +83,7 @@ h2 {
 .characterInfo{
   margin: 2%;
 }
+
+#currentCatagory{
+  display: inline;
+}
