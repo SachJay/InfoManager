@@ -83,7 +83,7 @@ function clearCurrentPage(parentId, childId){
 function getInfo(characterName){
   switch (characterName) {
     case "CrystalFang":
-      return "Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi Yah Boi ";
+      return "Yah Boi ";
       break;
 
     case "BurningBrotherhood":
