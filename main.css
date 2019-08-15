@@ -57,10 +57,24 @@ h2 {
 
 .characterTitle{
   color: black;
+  left: 3%;
+  up: 2%;
 }
 
 .characterInfo{
   margin: 2%;
+}
+
+.actionInfo{
+  margin: 0%;
+  padding: 0% 3%;
+  
+}
+
+.actionTitle{
+  margin: 0%;
+  padding-left: 3%;
+  padding-top: 3%;
 }
 
 /*---------Main Structure---------*/
@@ -87,6 +101,7 @@ h2 {
 
 #info{
   position: relative;
+  display: inline-block;
   flex: 3;
   order: 2;
   flex-direction: row;
