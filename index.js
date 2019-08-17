@@ -101,9 +101,6 @@ function printBasicInfo(data){
   infoTitle.innerHTML = data.name;
   currentPage.appendChild(infoTitle);
 
-  var br = document.createElement("br");
-  currentPage.appendChild(br);
-
   var info = document.createElement("h3");
   info.className = "characterInfo";
   info.innerHTML = data.info;
@@ -113,7 +110,7 @@ function printBasicInfo(data){
 }
 
 function printCharacterInfo(topic){
-  var numOfActions = topic.actions.length;
+  
 
   var currentPage = document.createElement("div");
   currentPage.id = "currentPage";
@@ -125,26 +122,152 @@ function printCharacterInfo(topic){
   var br = document.createElement("br");
   currentPage.appendChild(br);
 
-  //---Inefficient--Start
-  var infoTitle = document.createElement("h2");
-  infoTitle.className = "characterTitle";
-  infoTitle.innerHTML = "Actions";
+  document.getElementById("info").appendChild(currentPage);
+
+  printBasicCharacterInfo(topic);
+  printAdvancedCharacterInfo(topic);
+  printActionsAndSpecial(topic);
+}
+
+function printBasicCharacterInfo(topic){
+  var currentPage = document.getElementById("currentPage");
+
+  var infoTitle = document.createElement("p");
+  infoTitle.className = "characterBasicInfo";
+  infoTitle.innerHTML = topic.size+" "+topic.type+", "+topic.alignment;
   currentPage.appendChild(infoTitle);
   var br = document.createElement("br");
   currentPage.appendChild(br);
 
-  for(var i = 0; i < numOfActions; i++){
-    var infoTitle = document.createElement("h3");
-    infoTitle.className = "actionTitle";
-    infoTitle.innerHTML = topic.actions[i].name;
-    currentPage.appendChild(infoTitle);
+  var infoTitle = document.createElement("h3");
+  infoTitle.className = "characterBasicInfo";
+  infoTitle.innerHTML = "Armor Class: ";
+  currentPage.appendChild(infoTitle);
+  var info = document.createElement("p");
+  info.className = "actionInfo";
+  info.innerHTML = topic.armor_class;
+  currentPage.appendChild(info);
+  var br = document.createElement("br");
+  currentPage.appendChild(br);
 
-    var info = document.createElement("p");
-    info.className = "actionInfo";
-    info.innerHTML = topic.actions[i].desc;
-    currentPage.appendChild(info);
+  var infoTitle = document.createElement("h3");
+  infoTitle.className = "characterBasicInfo";
+  infoTitle.innerHTML = "Hit Points: ";
+  currentPage.appendChild(infoTitle);
+  var info = document.createElement("p");
+  info.className = "actionInfo";
+  info.innerHTML = topic.hit_points;
+  currentPage.appendChild(info);
+  var br = document.createElement("br");
+  currentPage.appendChild(br);
+
+  var infoTitle = document.createElement("h3");
+  infoTitle.className = "characterBasicInfo";
+  infoTitle.innerHTML = "Speed: ";
+  currentPage.appendChild(infoTitle);
+  var info = document.createElement("p");
+  info.className = "actionInfo";
+  info.innerHTML = topic.speed;
+  currentPage.appendChild(info);
+  var br = document.createElement("br");
+  currentPage.appendChild(br);
+}
+
+function printAdvancedCharacterInfo(topic){
+  var currentPage = document.getElementById("currentPage");
+
+  var senseInfoTitle = document.createElement("h3");
+  senseInfoTitle.className = "characterBasicInfo";
+  senseInfoTitle.innerHTML = "Senses: ";
+  currentPage.appendChild(senseInfoTitle);
+  var senseInfo = document.createElement("p");
+  senseInfo.className = "actionInfo";
+  senseInfo.innerHTML = topic.senses;
+  currentPage.appendChild(senseInfo);
+  var br = document.createElement("br");
+  currentPage.appendChild(br);
+
+  var langInfoTitle = document.createElement("h3");
+  langInfoTitle.className = "characterBasicInfo";
+  langInfoTitle.innerHTML = "Languages: ";
+  currentPage.appendChild(langInfoTitle);
+  var langInfo = document.createElement("p");
+  langInfo.className = "actionInfo";
+  langInfo.innerHTML = topic.languages;
+  currentPage.appendChild(langInfo);
+  var br = document.createElement("br");
+  currentPage.appendChild(br);
+
+  var challengeInfoTitle = document.createElement("h3");
+  challengeInfoTitle.className = "characterBasicInfo";
+  challengeInfoTitle.innerHTML = "Challenge: ";
+  currentPage.appendChild(challengeInfoTitle);
+  var challengeInfo = document.createElement("p");
+  challengeInfo.className = "actionInfo";
+  challengeInfo.innerHTML = topic.challenge_rating;
+  currentPage.appendChild(challengeInfo);
+  var br = document.createElement("br");
+  currentPage.appendChild(br);
+
+  if(topic.damage_vulnerabilities != ""){
+    var vulnerabeInfoTitle = document.createElement("h3");
+    vulnerabeInfoTitle.className = "characterBasicInfo";
+    vulnerabeInfoTitle.innerHTML = "Vulnerabe: ";
+    currentPage.appendChild(vulnerabeInfoTitle);
+    var vulnerabeInfo = document.createElement("p");
+    vulnerabeInfo.className = "actionInfo";
+    vulnerabeInfo.innerHTML = topic.damage_vulnerabilities;
+    currentPage.appendChild(vulnerabeInfo);
+    var br = document.createElement("br");
+    currentPage.appendChild(br);
   }
 
+  if(topic.damage_resistances != ""){
+    var resistanceInfoTitle = document.createElement("h3");
+    resistanceInfoTitle.className = "characterBasicInfo";
+    resistanceInfoTitle.innerHTML = "Resistances: ";
+    currentPage.appendChild(resistanceInfoTitle);
+    var resistanceInfo = document.createElement("p");
+    resistanceInfo.className = "actionInfo";
+    resistanceInfo.innerHTML = topic.damage_resistances;
+    currentPage.appendChild(resistanceInfo);
+    var br = document.createElement("br");
+    currentPage.appendChild(br);
+  }
+
+  if(topic.damage_immunities != ""){
+    var immunitiesInfoTitle = document.createElement("h3");
+    immunitiesInfoTitle.className = "characterBasicInfo";
+    immunitiesInfoTitle.innerHTML = "Immunities: ";
+    currentPage.appendChild(immunitiesInfoTitle);
+    var immunitiesInfo = document.createElement("p");
+    immunitiesInfo.className = "actionInfo";
+    immunitiesInfo.innerHTML = topic.damage_immunities;
+    currentPage.appendChild(immunitiesInfo);
+    var br = document.createElement("br");
+    currentPage.appendChild(br);
+  }
+
+  if(topic.condition_immunities != ""){
+    var conditionImmunitiesInfoTitle = document.createElement("h3");
+    conditionImmunitiesInfoTitle.className = "characterBasicInfo";
+    conditionImmunitiesInfoTitle.innerHTML = "Condition Immunities: ";
+    currentPage.appendChild(conditionImmunitiesInfoTitle);
+    var conditionImmunitiesInfo = document.createElement("p");
+    conditionImmunitiesInfo.className = "actionInfo";
+    conditionImmunitiesInfo.innerHTML = topic.condition_immunities;
+    currentPage.appendChild(conditionImmunitiesInfo);
+    var br = document.createElement("br");
+    currentPage.appendChild(br);
+  }
+}
+
+function printActionsAndSpecial(topic){
+  var numOfActions = topic.actions.length;
+
+  var currentPage = document.getElementById("currentPage");
+  //---Inefficient--Start
+  
   if(topic.special_abilities != null){
     var numOfSpecialAb = topic.special_abilities.length;
 
@@ -163,14 +286,31 @@ function printCharacterInfo(topic){
   
       var info = document.createElement("p");
       info.className = "actionInfo";
-      info.innerHTML = topic.actions[i].desc;
+      info.innerHTML = topic.special_abilities[i].desc;
       currentPage.appendChild(info);
     }  
   }
+
+  var infoTitle = document.createElement("h2");
+  infoTitle.className = "characterTitle";
+  infoTitle.innerHTML = "Actions";
+  currentPage.appendChild(infoTitle);
+  var br = document.createElement("br");
+  document.getElementById("currentPage").appendChild(br);
+
+  for(var i = 0; i < numOfActions; i++){
+    var infoTitle = document.createElement("h3");
+    infoTitle.className = "actionTitle";
+    infoTitle.innerHTML = topic.actions[i].name;
+    currentPage.appendChild(infoTitle);
+
+    var info = document.createElement("p");
+    info.className = "actionInfo";
+    info.innerHTML = topic.actions[i].desc;
+    currentPage.appendChild(info);
+  }
   
   //---Inefficient--End
-
-  document.getElementById("info").appendChild(currentPage);
 }
 
 function clearCurrentPage(parentId, childId){
