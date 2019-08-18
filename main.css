@@ -74,9 +74,37 @@ h2 {
 .actionTitle{
   margin: 0%;
   padding-left: 3%;
-  padding-top: 3%;
+  padding-top: 1%;
 }
 
+.characterBasicInfo{
+  display: inline-block;
+  margin: 0%;
+}
+
+.characterBasicInfoTitle{
+  display: inline-block;
+  margin: 0%;
+  margin-left: 2%;
+}
+
+.statDiv{
+  display: flex;
+  margin-left: 2%;
+}
+
+.statsTitle{
+  display: flex;
+  margin: 0%;
+  margin-left: 2%;
+  flex-direction: column;
+  flex: 1;
+}
+
+.statsValue{
+  display: flex;
+  margin: 0%;
+}
 /*---------Main Structure---------*/
 
 #everything{
@@ -111,10 +139,4 @@ h2 {
   padding: 0%;
 }
 
-.characterBasicInfo{
- display: inline;
-}
 
-.actionInfo{
-  display: inline-block;
-}
