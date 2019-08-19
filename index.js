@@ -75,32 +75,33 @@ function createTopicButton(topic, catagory){
 
 function displayTopicInfo(topic, catagory){
   if(currentPage != topic.name){
-    if(currentPage != null){
+    if(document.getElementById("currentPage") != null){
       clearCurrentPage("info", "currentPage");
     }
     
     if(catagory.topic_type == "Character"){
       printCharacterInfo(topic);
-    } else if(catagory.type == "Info"){
+    } else if(catagory.topic_type == "Info"){
       printBasicInfo(topic);
+      
     }
   }
 
   currentPage = topic.name;
 }
 
-function printBasicInfo(data){
+function printBasicInfo(topic){
   var currentPage = document.createElement("div");
   currentPage.id = "currentPage";
 
   var infoTitle = document.createElement("h1");
   infoTitle.className = "characterTitle";
-  infoTitle.innerHTML = data.name;
+  infoTitle.innerHTML = topic.name;
   currentPage.appendChild(infoTitle);
 
   var info = document.createElement("h3");
   info.className = "characterInfo";
-  info.innerHTML = data.info;
+  info.innerHTML = topic.info;
   currentPage.appendChild(info);
 
   document.getElementById("info").appendChild(currentPage);
@@ -125,6 +126,9 @@ function printCharacterInfo(topic){
   printCharacterStats(topic);
   printAdvancedCharacterInfo(topic);
   printActionsAndSpecial(topic);
+  
+  var br = document.createElement("br");
+  currentPage.appendChild(br);
 }
 
 function printBasicCharacterInfo(topic){
@@ -384,6 +388,59 @@ function getCatagory(catagoryNum){
 function getData(){
   let data = `[
     {
+      "topic_name": "Gang",
+      "topic_type": "Info",
+      "topic": [
+        {
+        "name": "Crystal Fang",
+        "info": "Big Gay"
+      },{
+        "name": "Moonlit Shadows",
+        "info": "Small Gay"
+      }]
+    },{
+      "topic_name": "Custom Monsters",
+      "topic_type": "Character",
+      "topic": [{
+        "name": "Hanzala",
+        "size": "Medium",
+        "type": "humanoid",
+        "alignment": "lawful good",
+        "armor_class": 10,
+        "hit_points": 10,
+        "hit_dice": "5d8",
+        "speed": "25 ft.",
+        "strength": 8,
+        "dexterity": 8,
+        "constitution": 10,
+        "intelligence": 16,
+        "wisdom": 14,
+        "charisma": 12,
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "senses": "passive Perception 10",
+        "languages": "Common",
+        "challenge_rating": "1/8",
+        "special_abilities": [
+          {
+            "name": "Play League",
+            "desc": "Any creature within 30ft of Hanzala has to make a DC 14 wisdom saving throw or be tilted for 1 hour",
+            "attack_bonus": 0
+          }
+        ],
+        "actions": [
+          {
+            "name": "Dagger",
+            "desc": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
+            "attack_bonus": 1,
+            "damage_dice": "1d4",
+            "damage_bonus": 0
+          }
+        ]
+      }]
+    },{
       "topic_name": "Generic Monsters",
       "topic_type": "Character",
       "topic": [

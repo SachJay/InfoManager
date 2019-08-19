@@ -1,5 +1,59 @@
 [
   {
+    "topic_name": "Gang",
+    "topic_type": "Info",
+    "topic": [
+      {
+      "name": "Crystal Fang",
+      "info": "Big Gay"
+    },{
+      "name": "Moonlit Shadows",
+      "info": "Small Gay"
+    }]
+  },{
+    "topic_name": "Custom Monsters",
+    "topic_type": "Character",
+    "topic": [{
+      "name": "Hanzala",
+      "size": "Medium",
+      "type": "humanoid",
+      "subtype": "goblinoid",
+      "alignment": "lawful good",
+      "armor_class": 10,
+      "hit_points": 8,
+      "hit_dice": "1d6",
+      "speed": "25 ft.",
+      "strength": 8,
+      "dexterity": 8,
+      "constitution": 10,
+      "intelligence": 16,
+      "wisdom": 14,
+      "charisma": 12,
+      "damage_vulnerabilities": "",
+      "damage_resistances": "",
+      "damage_immunities": "",
+      "condition_immunities": "",
+      "senses": "passive Perception 10",
+      "languages": "Common",
+      "challenge_rating": "1/8",
+      "special_abilities": [
+        {
+          "name": "Play League",
+          "desc": "Any creature within 30ft of Hanzala has to make a DC 14 wisdom saving throw or be tilted for 1 hour",
+          "attack_bonus": 0
+        }
+      ],
+      "actions": [
+        {
+          "name": "Dagger",
+          "desc": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
+          "attack_bonus": 1,
+          "damage_dice": "1d4",
+          "damage_bonus": 0
+        }
+      ]
+    }]
+  },{
     "topic_name": "Generic Monsters",
     "topic_type": "Character",
     "topic": [
