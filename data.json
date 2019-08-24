@@ -17,11 +17,10 @@
       "name": "Hanzala",
       "size": "Medium",
       "type": "humanoid",
-      "subtype": "goblinoid",
       "alignment": "lawful good",
       "armor_class": 10,
-      "hit_points": 8,
-      "hit_dice": "1d6",
+      "hit_points": 10,
+      "hit_dice": "5d8",
       "speed": "25 ft.",
       "strength": 8,
       "dexterity": 8,
@@ -40,6 +39,48 @@
         {
           "name": "Play League",
           "desc": "Any creature within 30ft of Hanzala has to make a DC 14 wisdom saving throw or be tilted for 1 hour",
+          "attack_bonus": 0
+        }
+      ],
+      "actions": [
+        {
+          "name": "Dagger",
+          "desc": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
+          "attack_bonus": 1,
+          "damage_dice": "1d4",
+          "damage_bonus": 0
+        }
+      ]
+    },{
+      "name": "Davis",
+      "size": "Small",
+      "type": "humanoid",
+      "alignment": "lawful good",
+      "armor_class": 10,
+      "hit_points": 8,
+      "hit_dice": "1d6",
+      "speed": "25 ft.",
+      "strength": 8,
+      "dexterity": 10,
+      "constitution": 11,
+      "intelligence": 15,
+      "wisdom": 11,
+      "charisma": 9,
+      "damage_vulnerabilities": "",
+      "damage_resistances": "",
+      "damage_immunities": "",
+      "condition_immunities": "",
+      "senses": "passive Perception 10",
+      "languages": "Common",
+      "challenge_rating": "1/8",
+      "special_abilities": [
+        {
+          "name": "Self Inflicted Flame",
+          "desc": "If Davis is tilted then make all wisdom saving throws with disadvantage",
+          "attack_bonus": 0
+        },{
+          "name": "Tilted Rage",
+          "desc": "If Davis is tilted then as a bonus action Davis can use vicious mockery. Any damage this spell inflicts Davis receives the same amount",
           "attack_bonus": 0
         }
       ],
@@ -18313,6 +18354,6 @@
         ]
       }
     ]
-  
+
   }
 ]

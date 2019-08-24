@@ -1,15 +1,6 @@
-var express = require('express');
-var fs = require("fs");
-
-var app = express();
-
-app.use(express.static(__dirname));
-
-app.listen(3000, '127.0.0.1');
-console.log("Now listening to port 3000");
-
 var currentPage = null;
 var currentCatagory = null;
+var fs = require("fs");
 
 fs.readFile("data.txt", "utf8", function(err, data){
   var fileData = data;
